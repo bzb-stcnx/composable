@@ -5,6 +5,9 @@ transducers are extremely memory efficient, process data collections significant
 
 transducers also enable a clean separation of concerns: the processing of the data is independent from iterating through the collection and building the resulting collection. the same transducer can be applied to any type of collection: arrays, observables, immutable sets, etc.
 
+for a more detailed explanation, see http://jlongster.com/Transducers.js--A-JavaScript-Library-for-Transformation-of-Data.
+thanks to James Longster for his inspiring transducers.js (https://github.com/jlongster/transducers.js) library.
+
 #performance
 http://jsperf.com/composables/3
 

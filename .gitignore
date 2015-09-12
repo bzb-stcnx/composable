@@ -1,0 +1,9 @@
+!.gitkeep
+node_modules/
+bower_components/
+build/**/*.js.map
+logs/*
+tmp/
+.DS_Store
+.idea
+*.swp

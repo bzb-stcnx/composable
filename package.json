@@ -1,0 +1,41 @@
+{
+  "name": "@bzb-stcnx/composable",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "efficient transducer lib",
+  "keywords": ["transducer"],
+  "author": "bzb-stcnx",
+  "license": "SEE LICENSE IN ./LICENSE.md",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/watchify src/index.ts -p [ tsify --project . ] --debug -o './node_modules/.bin/exorcist build/index.js.map > build/index.js' --verbose",
+    "build-once": "./node_modules/.bin/browserify src/index.ts -p [ tsify --project . ] --debug | ./node_modules/.bin/exorcist build/index.js.map > build/index.js",
+    "pretest": "npm install",
+    "test": "./node_modules/.bin/karma start",
+    "test-once": "./node_modules/.bin/karma start --single-run",
+    "prestart": "npm install"
+  },
+  "config": {
+    "link": "true"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "exorcist": "^0.4.0",
+    "tsd": "^0.6.4",
+    "typescript": "^1.5.3",
+    "watchify": "^3.3.1",
+    "tsify": "^0.11.10",
+    "jasmine": "^2.3.2",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-junit-reporter": "^0.3.4",
+    "karma-spec-reporter": "^0.0.20",
+    "karma-jasmine-html-reporter": "^0.1.8"
+  },
+  "optionalDependencies": {
+    "bunyan": "^1.4.0",
+    "rx": "^3.1.2"
+  }
+}

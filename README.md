@@ -11,6 +11,9 @@ thanks to James Longster for his inspiring transducers.js (https://github.com/jl
 #performance
 http://jsperf.com/composables/3
 
+#status
+experimental concept
+
 #dependencies
 none
 the dependencies listed in package.json are either development deps or optional for illustration purposes only.

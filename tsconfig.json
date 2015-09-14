@@ -2,12 +2,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "diagnostics": "true",
     "noEmitOnError": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "removeComments": true,
     "sourceMap": true
-  }
+  },
+  "files": [
+    "src/index.ts"
+  ]
 }

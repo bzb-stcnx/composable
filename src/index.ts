@@ -14,14 +14,15 @@ function drop(arr, val) {
   return arr;
 }
 
-function pipe(reducer) {
-  if ("function" == typeof reducer) reducer = [ reducer  ];
-    
+function turbopipe(reducer) {
+  if (!arguments.length) reducer = [];
+  else if (isFunction(reducer)) reducer = [ reducer  ];
+        
   function _pipe(compose) {
     reducer.push(compose);
-    return pipe(reducer);
+    return turbopipe(reducer);
   }
-    
+
   function _composer(compose) {
     return function(fn) {
       return _pipe(compose(fn))
@@ -43,8 +44,8 @@ function pipe(reducer) {
 
   return {
     pipe: _pipe,
-    map: _composer(map),
-    filter: _composer(filter),
+    map: _composer(turbopipe.map),
+    filter: _composer(turbopipe.filter),
     into: function(dst, append?) {
       reducer = _reducer(dst, append);
       return {
@@ -56,27 +57,22 @@ function pipe(reducer) {
   };
 }
 
-function filter(fn) {
-  return function compose(reduce) {
-    return function _filter(acc, val) {
-      return fn(val) ? reduce(acc, val) : acc;
+namespace turbopipe {
+  export function filter(fn) {
+    return function compose(reduce) {
+      return function _filter(acc, val) {
+        return fn(val) ? reduce(acc, val) : acc;
+      };
     };
   };
-};
 
-function map(fn) {
-  return function compose(reduce) {
-    return function _map(acc, val) {
-      return reduce(acc, fn(val));
+  export function map(fn) {
+    return function compose(reduce) {
+      return function _map(acc, val) {
+        return reduce(acc, fn(val));
+      };
     };
   };
-};
+}
 
-// TODO move example into dedicated file
-var arr = ["1","2","3","4","5"];
-
-var p = pipe(map(function(str) { return parseInt(str, 10);  }))
-  .filter(function(num) { return !(num %2); })
-	.map(function(num) { return num+1; });
-
-p.into([]).from(arr); // -> [3, 5]
+export = turbopipe;

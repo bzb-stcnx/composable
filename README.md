@@ -5,8 +5,8 @@ transducers are extremely memory efficient, process data collections significant
 
 transducers also enable a clean separation of concerns: the processing of the data is independent from iterating through the collection and building the resulting collection. the same transducer can be applied to any type of collection: arrays, observables, immutable sets, etc.
 
-for a more detailed explanation, see http://jlongster.com/Transducers.js--A-JavaScript-Library-for-Transformation-of-Data.
-thanks to James Longster for his inspiring transducers.js (https://github.com/jlongster/transducers.js) library.
+for a more detailed explanation, see ["Transducers.js: A JavaScript Library for Transformation of Data"](http://jlongster.com/Transducers.js--A-JavaScript-Library-for-Transformation-of-Data).
+thanks to James Longster for his inspiring [transducers.js](https://github.com/jlongster/transducers.js) library.
 
 #fluent API
 ```javascript
@@ -26,6 +26,7 @@ experimental concept
 
 #dependencies
 none
+
 the dependencies listed in package.json are either development deps or optional for illustration purposes only.
 
 #npm global install
@@ -49,4 +50,6 @@ this project supports typescript with annotations.
 this project supports commonjs modules in the browser out of the box thanks to browserify.
 
 #LICENSE
-see LICENSE.md
+see [LICENSE.md](./LICENSE.md)
+
+Copyright (c) 2015 bzb-stcnx

@@ -8,6 +8,16 @@ transducers also enable a clean separation of concerns: the processing of the da
 for a more detailed explanation, see http://jlongster.com/Transducers.js--A-JavaScript-Library-for-Transformation-of-Data.
 thanks to James Longster for his inspiring transducers.js (https://github.com/jlongster/transducers.js) library.
 
+#fluent API
+```javascript
+var pipe = turbopipe()
+        .filter(str => str.length % 2)
+        .map(str => str.toUpperCase());
+        
+var arr = [ "a", "bc", "def", "ghij", "klmno" ];
+pipe.into([]).from(arr); // => [ "A", "DEF", "KLMNO" ]
+```
+
 #performance
 http://jsperf.com/composables/3
 

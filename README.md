@@ -36,10 +36,18 @@ the dependencies listed in package.json are either development deps or optional 
 * `test-once`: run unit tests defined in test/ only once and exit
 
 #typescript
-this project supports typescript with annotations.
+this project requires typescript >= 1.6 for development.
+the corresponding development dependency is included in [package.json](./package.json).
+
+# rxjs
+this project is set up for import of [rxjs](https://www.npmjs.com/package/rx) in unit tests with:
+```javascript
+var Rx = require("rx/index");
+```
+"rx/index" includes all the rx options, eg. rx.testing.
 
 #commonjs modules
-this project supports commonjs modules in the browser out of the box thanks to browserify.
+this project supports commonjs modules in the browser out of the box thanks to [browserify](https://www.npmjs.com/package/browserify).
 
 #LICENSE
 see [LICENSE.md](./LICENSE.md)

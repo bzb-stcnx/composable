@@ -1,18 +1,21 @@
 "use strict";
-var Rx = require("rx");
+var Rx;
 
 /**
  * @description library of utility functions for jasmine tests of RXJS code
  */
-module.exports = {
-  ReactiveTest: {
-    feed: feed,
-    timeOf: timeOf
-  },
-  Scheduler: {
-    startGroup: startGroup,
-    equalMessages: equalMessages
-  }
+module.exports = function(deps) {
+  Rx = deps.Rx;
+  return {
+    ReactiveTest: {
+      feed: feed,
+      timeOf: timeOf
+    },
+    Scheduler: {
+      startGroup: startGroup,
+      equalMessages: equalMessages
+    }
+  };
 };
 
 /**

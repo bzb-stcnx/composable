@@ -38,16 +38,7 @@ module.exports = function(config) {
             'project': '.'
           }
         ]
-      ],
-      configure: function(bundle) {
-        bundle.on('prebundle', function() {
-          // Exclude rx.all.js since it does not include rx.testing.js
-          bundle.exclude('./node_modules/rx/dist/rx.all.js');
-          // Map `require('rx')` calls to the non-dist version of rx
-          // that does include rx.testing.js.
-          bundle.require('./node_modules/rx/index.js', { expose: 'rx'  });
-        });
-      }
+      ]
     },
 
     // 'progress' | 'dots' | 'html' | 'junit' | 'spec'

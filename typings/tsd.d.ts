@@ -1,3 +1,3 @@
-/// <reference path="jasmine/jasmine.d.ts" />
-/// <reference path="bunyan/bunyan.d.ts" />
-/// <reference path="node/node.d.ts" />
+/// <reference path="tsd/bunyan/bunyan.d.ts" />
+/// <reference path="tsd/jasmine/jasmine.d.ts" />
+/// <reference path="tsd/node/node.d.ts" />

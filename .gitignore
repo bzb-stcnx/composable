@@ -1,9 +1,12 @@
 !.gitkeep
-node_modules/
 bower_components/
-build/**/*.js.map
-logs/*
+node_modules/*
+!node_modules/lib
+test/reports/
 tmp/
+typings/tsd/
+typings/tsd.d.ts
 .DS_Store
-.idea
+*.js.map
+*.log
 *.swp

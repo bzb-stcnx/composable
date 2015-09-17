@@ -42,10 +42,10 @@ module.exports = function(config) {
       configure: function(bundle) {
         bundle.on('prebundle', function() {
           // Exclude rx.all.js since it does not include rx.testing.js
-          bundle.exclude('rx/dist/rx.all.js');
+          bundle.exclude('./node_modules/rx/dist/rx.all.js');
           // Map `require('rx')` calls to the non-dist version of rx
           // that does include rx.testing.js.
-          bundle.require('rx/index.js', { expose: 'rx'  });
+          bundle.require('./node_modules/rx/index.js', { expose: 'rx'  });
         });
       }
     },
@@ -54,7 +54,7 @@ module.exports = function(config) {
     reporters: ['spec', 'html', 'junit'],
 
 		junitReporter: {
-      outputDir: "test",
+      outputDir: "test/reports",
 			outputFile: undefined, // filename based on browser name
 			suite: 'unit'
 		}

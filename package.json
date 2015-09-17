@@ -8,23 +8,23 @@
   "license": "SEE LICENSE IN ./LICENSE.md",
   "main": "build/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/watchify src/index.ts -p [ tsify --project . ] --debug -o './node_modules/.bin/exorcist build/index.js.map > build/index.js' --verbose",
-    "build-once": "./node_modules/.bin/browserify src/index.ts -p [ tsify --project . ] --debug | ./node_modules/.bin/exorcist build/index.js.map > build/index.js",
+    "postinstall": "tsd update --save && tsd rebundle",
+    "build": "watchify src/index.ts -p [ tsify --project . ] --debug -o 'exorcist build/index.js.map > build/index.js' --verbose",
+    "build-once": "browserify src/index.ts -p [ tsify --project . ] --debug | exorcist build/index.js.map > build/index.js",
     "pretest": "npm install",
-    "test": "./node_modules/.bin/karma start",
-    "test-once": "./node_modules/.bin/karma start --single-run",
-    "prestart": "npm install"
+    "test": "karma start",
+    "test-once": "karma start --single-run"
   },
   "config": {
     "link": "true"
   },
   "devDependencies": {
-    "browserify": "^11.0.1",
+    "browserify": "^11.1.0",
     "exorcist": "^0.4.0",
     "tsd": "^0.6.4",
-    "typescript": "^1.5.3",
-    "watchify": "^3.3.1",
-    "tsify": "^0.11.10",
+    "typescript": "^1.6.2",
+    "watchify": "^3.4.0",
+    "tsify": "^0.11.15",
     "jasmine": "^2.3.2",
     "karma": "^0.13.9",
     "karma-browserify": "^4.3.0",
@@ -35,7 +35,7 @@
     "karma-jasmine-html-reporter": "^0.1.8"
   },
   "optionalDependencies": {
-    "bunyan": "^1.4.0",
+    "bunyan": "^1.5.1",
     "rx": "^3.1.2"
   }
 }
